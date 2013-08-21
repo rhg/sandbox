@@ -18,8 +18,8 @@
   :on-create-options-menu
   (fn [this menu]
     (on-ui
-      (make-menu menu [[:item {:title "Play" :show-as-action [:always :with-text]}]
-                       [:item {:title "Stop" :show-as-action [:always :with-text]}]])))
+      (make-menu menu [[:item {:title "Play" :show-as-action :always :icon android.R$drawable/ic_media_play}]
+                       [:item {:title "Stop" :show-as-action :always :icon android.R$drawable/ic_menu_close_clear_cancel}]])))
   :on-create
   (fn [this bundle]
     (on-ui
