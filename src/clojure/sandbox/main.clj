@@ -18,8 +18,8 @@
   :on-create-options-menu
   (fn [this menu]
     (on-ui
-      (make-menu menu [[:item {:title "Play"}]
-                       [:item {:title "Stop"}]])))
+      (make-menu menu [[:item {:title "Play" :show-as-action [:always :with-text]}]
+                       [:item {:title "Stop" :show-as-action [:always :with-text]}]])))
   :on-create
   (fn [this bundle]
     (on-ui
