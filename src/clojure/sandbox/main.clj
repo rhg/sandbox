@@ -12,7 +12,7 @@
 (defactivity com.androidarea51.rhg135.sandbox.RadioControllerActivity
   :def a
   :on-create-options-menu
-  (fn [this menu]
+  (fn [^android.app.Activity this menu]
     (on-ui
       (make-menu menu [[:item {:title "Play" :on-click
                                (fn [_]
