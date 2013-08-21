@@ -5,17 +5,8 @@
         [neko.ui.menu :only [make-menu]]
         [neko.ui :only [make-ui]])
   (:import android.net.Uri
-           android.content.Intent)
-  (:gen-class
-    :name com.androidarea51.rhg135.sandbox.Application
-    :extends android.app.Application
-    :exposes-methods {onCreate superOnCreate}))
+           android.content.Intent))
 
-(defn -onCreate [this]
-  (.superOnCreate this)
-  (init-application this))
-
-;Why java, why!!
 (defn get-uri [^android.content.Context a] (Uri/parse "file:///android_asset/GoneCrazy.mp3"))
 
 (defactivity com.androidarea51.rhg135.sandbox.RadioControllerActivity
