@@ -4,6 +4,8 @@
         [neko.application :only [init-application]]
         [neko.ui.menu :only [make-menu]]
         [neko.ui :only [make-ui]])
+  (:import android.net.Uri
+           android.content.Intent)
   (:gen-class
     :name com.androidarea51.rhg135.sandbox.Application
     :extends android.app.Application
@@ -13,12 +15,20 @@
   (.superOnCreate this)
   (init-application this))
 
+;Why java, why!!
+(defn get-uri [^android.content.Context a] (Uri/parse "file:///android_asset/GoneCrazy.mp3"))
+
 (defactivity com.androidarea51.rhg135.sandbox.RadioControllerActivity
   :def a
   :on-create-options-menu
   (fn [this menu]
     (on-ui
-      (make-menu menu [[:item {:title "Play" :show-as-action :always :icon android.R$drawable/ic_media_play}]
+      (make-menu menu [[:item {:title "Play" :on-click
+                               (fn [_]
+                                 (let [intent (Intent. Intent/ACTION_VIEW)]
+                                   (.setDataAndType intent (get-uri this) "audio/mp3")
+                                   (.startService this intent)))
+                                     :show-as-action :always :icon android.R$drawable/ic_media_play}]
                        [:item {:title "Stop" :show-as-action :always :icon android.R$drawable/ic_menu_close_clear_cancel}]])))
   :on-create
   (fn [this bundle]
