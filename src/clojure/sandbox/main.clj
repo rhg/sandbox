@@ -1,4 +1,4 @@
-(ns com.androidarea51.rhg135.sandbox.main
+(ns sandbox.main
   (:use [neko.activity :only [defactivity set-content-view!]]
         [neko.threading :only [on-ui]]
         [neko.application :only [init-application]]
