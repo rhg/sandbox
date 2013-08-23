@@ -12,7 +12,7 @@
       android:label="@string/app_name">
       <uses-permissions android:name="android.permission.INTERNET" />
       <uses-permissions android:name="android.permission.WAKE_LOCK" />
-      <activity android:name="neko.splash.SplashActivity"
+      <activity android:name=".SplashActivity"
                 android:theme="@android:style/Theme.Translucent.NoTitleBar">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
