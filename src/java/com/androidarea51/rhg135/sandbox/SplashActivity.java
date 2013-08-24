@@ -1,4 +1,4 @@
-package com.androidarea51.rhg135.sandbox.SplashActivity;
+package com.androidarea51.rhg135.sandbox;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -33,27 +33,18 @@ public class SplashActivity extends Activity {
     }
 
     public void setupSplash() {
-        // TODO: This is despicably terrible. Rewrite this ASAP.
         setContentView(R.layout.splashscreen);
-        PackageManager pm = getPackageManager();
-        CharSequence title = "<Unknown>";
-        try {
-            title = pm.getApplicationLabel(pm.getApplicationInfo(getApplicationInfo().packageName, 0));
-        } catch (Exception e) { }
-        TextView appNameView = (TextView)findViewById(R.id.splash_app_name + 65536);
-        if (appNameView != null) {
-            appNameView.setText(title);
-        }
+
+        TextView appNameView = (TextView)findViewById(R.id.splash_app_name);
+        appNameView.setText(R.string.app_name);
 
         Animation rotation = AnimationUtils.loadAnimation(this, R.anim.splash_rotation);
-        ImageView circleView = (ImageView)findViewById(R.id.splash_circles + 65536);
-        if (circleView != null) {
-            circleView.startAnimation(rotation);
-        }
+        ImageView circleView = (ImageView)findViewById(R.id.splash_circles);
+        circleView.startAnimation(rotation);
     }
 
     public void proceed() {
-        startActivity(new Intent(getPackageName() + ".MAIN"));
+        startActivity(new Intent("com.androidarea51.rhg135.sandbox.MAIN"));
         finish();
     }
 
