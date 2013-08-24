@@ -13,6 +13,8 @@ import clojure.lang.Symbol;
 import clojure.lang.Var;
 import clojure.lang.RT;
 
+import com.androidarea51.rhg135.sandbox.R;
+
 public class SplashActivity extends Activity {
 
     private static boolean firstLaunch = true;
