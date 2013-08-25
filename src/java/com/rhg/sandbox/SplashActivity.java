@@ -1,4 +1,4 @@
-package com.androidarea51.rhg135.sandbox;
+package com.rhg.sandbox;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import clojure.lang.Symbol;
 import clojure.lang.Var;
 import clojure.lang.RT;
 
-import com.androidarea51.rhg135.sandbox.R;
+import com.rhg.sandbox.R;
 
 public class SplashActivity extends Activity {
 

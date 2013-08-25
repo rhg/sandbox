@@ -9,7 +9,7 @@
 
 (defn get-uri [^android.content.Context a] (Uri/parse "file:///android_asset/GoneCrazy.mp3"))
 
-(defactivity com.androidarea51.rhg135.sandbox.RadioControllerActivity
+(defactivity com.rhg.sandbox
   :def a
   :on-create-options-menu
   (fn [^android.app.Activity this menu]
